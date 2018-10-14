@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AuthGuard } from './_guards/auth.guard';
@@ -17,7 +17,7 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -58,7 +58,9 @@ export function tokenGetter() {
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
         config: {

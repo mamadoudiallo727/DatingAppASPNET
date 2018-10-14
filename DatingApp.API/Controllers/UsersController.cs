@@ -37,7 +37,7 @@ namespace DatingApp.API.Controllers {
         var userToreturn = _mapper.Map<UserForDetailedDto>(user);
       return Ok (userToreturn);
     }
-    [HttpPut("{id}")]
+    [HttpPut("{id}", Name="GetUser")]
     public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto userForUpdateDto)
     { 
      

@@ -40,9 +40,9 @@ constructor(private http: HttpClient) { }
       );
   }
 
-  register(model: any) {
+  register(user: User) {
 
-    return this.http.post(this.baseUrl + 'register', model);
+    return this.http.post(this.baseUrl + 'register', user);
   }
   loggedIn() {
     const token = localStorage.getItem('token');
